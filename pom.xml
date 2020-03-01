@@ -36,13 +36,25 @@
 			</exclusions>
 		</dependency>
 
+        <!-- Databases -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+            <version>2.1.4.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+            <version>1.4.199</version>
+        </dependency>
+
 		<!-- GraphQL -->
 		<dependency>
 			<groupId>com.graphql-java-kickstart</groupId>
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>6.0.1</version>
 		</dependency>
-
         <!-- to embed Altair tool -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
@@ -50,7 +62,6 @@
             <version>6.0.1</version>
             <scope>runtime</scope>
         </dependency>
-
         <!-- to embed GraphiQL tool -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
@@ -58,7 +69,6 @@
             <version>6.0.1</version>
             <scope>runtime</scope>
         </dependency>
-
         <!-- to embed Voyager tool -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
@@ -66,7 +76,6 @@
             <version>6.0.1</version>
             <scope>runtime</scope>
         </dependency>
-
         <!-- testing facilities -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
@@ -74,6 +83,7 @@
             <version>6.0.1</version>
             <scope>test</scope>
         </dependency>
+
 	</dependencies>
 
 	<build>

@@ -1,0 +1,12 @@
+{
+  findAllPosts {
+    id
+    title
+    description
+    price
+    owner {
+      firstName
+      lastName
+    }
+  }
+}

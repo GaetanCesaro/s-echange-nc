@@ -1,0 +1,9 @@
+mutation {
+  newUser(
+    email: "jean.valgeant@gmail.com",
+    firstName: "Jean",
+    lastName: "Valgeant"
+  ){
+    id firstName lastName email
+  }
+}

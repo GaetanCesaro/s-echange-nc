@@ -1,0 +1,3 @@
+mutation {
+  detetePost(id:1)
+}

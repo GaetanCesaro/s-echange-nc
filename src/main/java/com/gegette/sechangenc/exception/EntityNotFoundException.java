@@ -17,6 +17,11 @@ public class EntityNotFoundException extends RuntimeException implements GraphQL
         extensions.put("invalidId", invalidId);
     }
 
+    public EntityNotFoundException(String message, String invalidSearch) {
+        super(message);
+        extensions.put("invalidSearch", invalidSearch);
+    }
+
     @Override
     public List<SourceLocation> getLocations() {
         return null;

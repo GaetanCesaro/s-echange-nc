@@ -16,8 +16,7 @@ public class Post {
     private int price;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id",
-            nullable = false, updatable = false)
+    @JoinColumn(name = "owner_id", nullable = false, updatable = false)
     private User owner;
 
     public Post() {

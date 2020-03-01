@@ -4,6 +4,11 @@ graphql:
     enabled: true
     corsEnabled: true
 
+graphiql:
+  mapping: /graphiql
+  endpoint: /graphql
+  enabled: true
+
 spring:
   jpa.database-platform: org.hibernate.dialect.H2Dialect
   h2.console.enabled: true

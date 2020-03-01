@@ -29,7 +29,7 @@ public class Mutation implements GraphQLMutationResolver {
         return user;
     }
 
-    public Post newBook(String title, String description, Integer price, Long ownerId) {
+    public Post newPost(String title, String description, Integer price, Long ownerId) {
         Post post = new Post();
         post.setOwner(new User(ownerId));
         post.setTitle(title);

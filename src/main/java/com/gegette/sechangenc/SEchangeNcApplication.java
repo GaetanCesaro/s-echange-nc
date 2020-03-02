@@ -1,11 +1,6 @@
 package com.gegette.sechangenc;
 
 import com.gegette.sechangenc.exception.GraphQLErrorAdapter;
-import com.gegette.sechangenc.repository.PostRepository;
-import com.gegette.sechangenc.repository.UserRepository;
-import com.gegette.sechangenc.resolver.Mutation;
-import com.gegette.sechangenc.resolver.PostResolver;
-import com.gegette.sechangenc.resolver.Query;
 import graphql.ExceptionWhileDataFetching;
 import graphql.GraphQLError;
 import graphql.kickstart.execution.error.GraphQLErrorHandler;
@@ -23,21 +18,6 @@ public class SEchangeNcApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(SEchangeNcApplication.class, args);
 	}
-
-    @Bean
-    public PostResolver postResolver(UserRepository userRepository) {
-        return new PostResolver(userRepository);
-    }
-
-    @Bean
-    public Query query(UserRepository userRepository, PostRepository postRepository) {
-        return new Query(userRepository, postRepository);
-    }
-
-    @Bean
-    public Mutation mutation(UserRepository userRepository, PostRepository postRepository) {
-        return new Mutation(userRepository, postRepository);
-    }
 
 	@Bean
 	public GraphQLErrorHandler errorHandler() {

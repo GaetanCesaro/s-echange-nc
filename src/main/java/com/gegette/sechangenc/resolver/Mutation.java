@@ -6,12 +6,15 @@ import com.gegette.sechangenc.model.Post;
 import com.gegette.sechangenc.model.User;
 import com.gegette.sechangenc.repository.PostRepository;
 import com.gegette.sechangenc.repository.UserRepository;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
+@Component
 public class Mutation implements GraphQLMutationResolver {
-    private UserRepository userRepository;
-    private PostRepository postRepository;
+
+    private final UserRepository userRepository;
+    private final PostRepository postRepository;
 
     public Mutation(UserRepository userRepository, PostRepository postRepository) {
         this.userRepository = userRepository;

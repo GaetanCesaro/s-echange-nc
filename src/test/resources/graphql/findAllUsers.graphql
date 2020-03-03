@@ -1,0 +1,7 @@
+{
+  findAllUsers {
+    firstName
+    lastName
+    email
+  }
+}

@@ -1,8 +1,8 @@
 mutation {
   newUser(
-    email: "jean.valgeant@gmail.com",
+    email: "jean.tanrien@gmail.com",
     firstName: "Jean",
-    lastName: "Valgeant"
+    lastName: "Tanrien"
   ){
     id firstName lastName email
   }

@@ -5,14 +5,17 @@ import com.gegette.sechangenc.exception.EntityNotFoundException;
 import com.gegette.sechangenc.model.Post;
 import com.gegette.sechangenc.model.User;
 import com.gegette.sechangenc.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
 @Component
 public class PostResolver implements GraphQLResolver<Post> {
+
     private UserRepository userRepository;
 
+    @Autowired
     public PostResolver(UserRepository userRepository) {
         this.userRepository = userRepository;
     }

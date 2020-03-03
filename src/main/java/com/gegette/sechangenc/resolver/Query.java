@@ -6,6 +6,7 @@ import com.gegette.sechangenc.model.Post;
 import com.gegette.sechangenc.model.User;
 import com.gegette.sechangenc.repository.PostRepository;
 import com.gegette.sechangenc.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -15,9 +16,10 @@ import java.util.Optional;
 @Component
 public class Query implements GraphQLQueryResolver {
 
-    private final PostRepository postRepository;
-    private final UserRepository userRepository;
+    private PostRepository postRepository;
+    private UserRepository userRepository;
 
+    @Autowired
     public Query(UserRepository userRepository, PostRepository postRepository) {
         this.userRepository = userRepository;
         this.postRepository = postRepository;

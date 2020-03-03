@@ -1,18 +1,26 @@
 package com.gegette.sechangenc.model;
 
+import io.micrometer.core.lang.NonNull;
+
 import javax.persistence.*;
-import java.security.acl.Owner;
 
 @Entity
 public class Post {
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", insertable = false, updatable = false)
     private Long id;
 
+    @NonNull
+    @Column(nullable = false, name = "TITLE")
     private String title;
 
+    @NonNull
+    @Column(nullable = false, name = "DESCRIPTION")
     private String description;
 
+    @NonNull
+    @Column(nullable = false, name = "PRICE")
     private int price;
 
     @ManyToOne

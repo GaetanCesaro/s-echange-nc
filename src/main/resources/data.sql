@@ -16,8 +16,8 @@ CREATE TABLE post (
 );
 
 INSERT INTO user (email, first_name, last_name) VALUES
-  ('dangite.aliko@gmail.com', 'Aliko', 'Dangote'),
   ('bill.gates@hotmail.com', 'Bill', 'Gates'),
+  ('dangite.aliko@gmail.com', 'Aliko', 'Dangote'),
   ('folrunsho.alokija@yahoo.com', 'Folrunsho', 'Alakija');
 
 INSERT INTO post (title, description, price, owner_id) VALUES

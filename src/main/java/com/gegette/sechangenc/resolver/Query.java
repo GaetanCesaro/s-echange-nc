@@ -2,9 +2,9 @@ package com.gegette.sechangenc.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
 import com.gegette.sechangenc.exception.EntityNotFoundException;
-import com.gegette.sechangenc.model.Post;
+import com.gegette.sechangenc.model.Ad;
 import com.gegette.sechangenc.model.User;
-import com.gegette.sechangenc.repository.PostRepository;
+import com.gegette.sechangenc.repository.AdRepository;
 import com.gegette.sechangenc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,17 +16,17 @@ import java.util.Optional;
 @Component
 public class Query implements GraphQLQueryResolver {
 
-    private PostRepository postRepository;
+    private AdRepository adRepository;
     private UserRepository userRepository;
 
     @Autowired
-    public Query(UserRepository userRepository, PostRepository postRepository) {
+    public Query(UserRepository userRepository, AdRepository adRepository) {
         this.userRepository = userRepository;
-        this.postRepository = postRepository;
+        this.adRepository = adRepository;
     }
 
-    public Iterable<Post> findAllPosts() {
-        return postRepository.findAll();
+    public Iterable<Ad> findAllAds() {
+        return adRepository.findAll();
     }
 
     public Iterable<User> findAllUsers() {
@@ -64,8 +64,8 @@ public class Query implements GraphQLQueryResolver {
         throw new EntityNotFoundException("Utilisateur introuvable", 0L);
     }
 
-    public long countPosts() {
-        return postRepository.count();
+    public long countAds() {
+        return adRepository.count();
     }
     public long countUsers() {
         return userRepository.count();

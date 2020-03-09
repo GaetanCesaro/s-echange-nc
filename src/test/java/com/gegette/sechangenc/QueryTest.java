@@ -25,13 +25,13 @@ public class QueryTest {
     private GraphQLTestTemplate graphQLTestTemplate;
 
     @Test
-    public void findAllPosts() throws IOException {
+    public void findAllAds() throws IOException {
 
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/findAllPosts.graphql", null);
+        GraphQLResponse response = graphQLTestTemplate.perform("graphql/findAllAds.graphql", null);
         assertNotNull(response);
         assertTrue(response.isOk());
-		assertEquals("1", response.get("$.data.findAllPosts[0].id"));
-        assertEquals("Lit bébé", response.get("$.data.findAllPosts[0].title"));
+		assertEquals("1", response.get("$.data.findAllAds[0].id"));
+        assertEquals("Lit bébé", response.get("$.data.findAllAds[0].title"));
 
     }
 

@@ -1,0 +1,18 @@
+type Ad {
+    id: ID!
+    title: String!
+    description: String!
+    price: Int!
+    owner: User!
+}
+
+extend type Query {
+    findAllAds: [Ad]!
+    countAds: Long!
+}
+
+extend type Mutation {
+    newAd(title: String!, description: String!, price: Int!, owner_id: Long!) : Ad!
+    deleteAd(id: ID!) : Boolean
+    updateAdPrice(price: Long!, id: ID!) : Ad!
+}

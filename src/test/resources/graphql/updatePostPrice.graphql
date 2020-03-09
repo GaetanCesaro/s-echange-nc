@@ -1,5 +1,0 @@
-mutation {
-  updatePostPrice(price: 50000, id: 2) {
-    id title price
-  }
-}

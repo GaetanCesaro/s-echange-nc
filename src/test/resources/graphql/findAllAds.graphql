@@ -1,5 +1,5 @@
 {
-  findAllPosts {
+  findAllAds {
     id
     title
     description

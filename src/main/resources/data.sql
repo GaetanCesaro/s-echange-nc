@@ -6,8 +6,8 @@ CREATE TABLE user (
   last_name VARCHAR(250) NOT NULL,
 );
 
-DROP TABLE IF EXISTS post;
-CREATE TABLE post (
+DROP TABLE IF EXISTS ad;
+CREATE TABLE ad (
   id INT AUTO_INCREMENT  PRIMARY KEY,
   title VARCHAR(250) NOT NULL,
   description VARCHAR(250) NOT NULL,
@@ -20,7 +20,7 @@ INSERT INTO user (email, first_name, last_name) VALUES
   ('dangite.aliko@gmail.com', 'Aliko', 'Dangote'),
   ('folrunsho.alokija@yahoo.com', 'Folrunsho', 'Alakija');
 
-INSERT INTO post (title, description, price, owner_id) VALUES
+INSERT INTO ad (title, description, price, owner_id) VALUES
   ('Lit bébé', 'Peu servi, acheté chez bébé neuf', 20000, 1),
   ('Guitare acoustique Yamaha', 'Bon état, vendue car nouvelle guitare offerte par ma compagne', 15000, 1),
   ('Ventilateur de ouf', 'Il fait chaud, un bon ventilateur c''est éssentiel !', 5900, 2);

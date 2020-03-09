@@ -2,9 +2,9 @@ package com.gegette.sechangenc.resolver;
 
 import com.coxautodev.graphql.tools.GraphQLMutationResolver;
 import com.gegette.sechangenc.exception.EntityNotFoundException;
-import com.gegette.sechangenc.model.Post;
+import com.gegette.sechangenc.model.Ad;
 import com.gegette.sechangenc.model.User;
-import com.gegette.sechangenc.repository.PostRepository;
+import com.gegette.sechangenc.repository.AdRepository;
 import com.gegette.sechangenc.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -15,12 +15,12 @@ import java.util.Optional;
 public class Mutation implements GraphQLMutationResolver {
 
     private UserRepository userRepository;
-    private PostRepository postRepository;
+    private AdRepository adRepository;
 
     @Autowired
-    public Mutation(UserRepository userRepository, PostRepository postRepository) {
+    public Mutation(UserRepository userRepository, AdRepository adRepository) {
         this.userRepository = userRepository;
-        this.postRepository = postRepository;
+        this.adRepository = adRepository;
     }
 
     public User newUser(String email, String firstName, String lastName) {
@@ -34,34 +34,34 @@ public class Mutation implements GraphQLMutationResolver {
         return user;
     }
 
-    public Post newPost(String title, String description, Integer price, Long ownerId) {
-        Post post = new Post();
-        post.setOwner(new User(ownerId));
-        post.setTitle(title);
-        post.setDescription(description);
-        post.setPrice(price != null ? price : 0);
+    public Ad newAd(String title, String description, Integer price, Long ownerId) {
+        Ad ad = new Ad();
+        ad.setOwner(new User(ownerId));
+        ad.setTitle(title);
+        ad.setDescription(description);
+        ad.setPrice(price != null ? price : 0);
 
-        postRepository.save(post);
+        adRepository.save(ad);
 
-        return post;
+        return ad;
     }
 
-    public boolean deletePost(Long id) {
-        postRepository.deleteById(id);
+    public boolean deleteAd(Long id) {
+        adRepository.deleteById(id);
         return true;
     }
 
-    public Post updatePostPrice(Integer price, Long id) {
-        Optional<Post> optionalPost = postRepository.findById(id);
-        if (optionalPost.isPresent()) {
-            Post post = optionalPost.get();
-            post.setPrice(price != null ? price : 0);
+    public Ad updateAdPrice(Integer price, Long id) {
+        Optional<Ad> optionalAd = adRepository.findById(id);
+        if (optionalAd.isPresent()) {
+            Ad ad = optionalAd.get();
+            ad.setPrice(price != null ? price : 0);
 
-            postRepository.save(post);
+            adRepository.save(ad);
 
-            return post;
+            return ad;
         }
 
-        throw new EntityNotFoundException("Post introuvable", id);
+        throw new EntityNotFoundException("Ad introuvable", id);
     }
 }

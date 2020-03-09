@@ -1,5 +1,5 @@
 mutation {
-  newPost(
+  newAd(
     title: "Table et chaises",
     description: "Magnifique table et chaises d'intérieur",
     price: 25000,

@@ -1,0 +1,3 @@
+mutation {
+  deleteAd(id:1)
+}

@@ -36,34 +36,34 @@ public class MutationTest {
     }
 
     @Test
-    public void newPost() throws IOException {
+    public void newAd() throws IOException {
 
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/newPost.graphql", null);
+        GraphQLResponse response = graphQLTestTemplate.perform("graphql/newAd.graphql", null);
         assertNotNull(response);
         assertTrue(response.isOk());
-        assertEquals("4", response.get("$.data.newPost.id"));
-        assertEquals("Table et chaises", response.get("$.data.newPost.title"));
+        assertEquals("4", response.get("$.data.newAd.id"));
+        assertEquals("Table et chaises", response.get("$.data.newAd.title"));
 
     }
 
     @Test
-    public void deletePost() throws IOException {
+    public void deleteAd() throws IOException {
 
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/deletePost.graphql", null);
+        GraphQLResponse response = graphQLTestTemplate.perform("graphql/deleteAd.graphql", null);
         assertNotNull(response);
         assertTrue(response.isOk());
-        assertTrue(response.get("$.data.deletePost", Boolean.class));
+        assertTrue(response.get("$.data.deleteAd", Boolean.class));
 
     }
 
     @Test
-    public void updatePostPrice() throws IOException {
+    public void updateAdPrice() throws IOException {
 
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/updatePostPrice.graphql", null);
+        GraphQLResponse response = graphQLTestTemplate.perform("graphql/updateAdPrice.graphql", null);
         assertNotNull(response);
         assertTrue(response.isOk());
-        assertEquals("2", response.get("$.data.updatePostPrice.id"));
-        assertTrue(50000 == response.get("$.data.updatePostPrice.price", Integer.class));
+        assertEquals("2", response.get("$.data.updateAdPrice.id"));
+        assertTrue(50000 == response.get("$.data.updateAdPrice.price", Integer.class));
 
     }
 }

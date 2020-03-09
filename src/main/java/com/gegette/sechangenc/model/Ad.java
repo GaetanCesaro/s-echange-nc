@@ -11,25 +11,25 @@ import javax.persistence.*;
 @AllArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class User {
+public class Ad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", insertable = false, updatable = false)
     private Long id;
 
     @NonNull
-    @Column(nullable = false, name = "EMAIL")
-    private String email;
+    @Column(nullable = false, name = "TITLE")
+    private String title;
 
     @NonNull
-    @Column(nullable = false, name = "FIRST_NAME")
-    private String firstName;
+    @Column(nullable = false, name = "DESCRIPTION")
+    private String description;
 
     @NonNull
-    @Column(nullable = false, name = "LAST_NAME")
-    private String lastName;
+    @Column(nullable = false, name = "PRICE")
+    private int price;
 
-    public User(Long id) {
-        this.id = id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "owner_id", nullable = false, updatable = false)
+    private User owner;
 }

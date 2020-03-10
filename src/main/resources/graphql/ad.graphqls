@@ -3,6 +3,8 @@ type Ad {
     title: String!
     description: String!
     price: Int!
+    imageUrl: String
+    category: String!
     owner: User!
 }
 
@@ -12,7 +14,7 @@ extend type Query {
 }
 
 extend type Mutation {
-    newAd(title: String!, description: String!, price: Int!, owner_id: Long!) : Ad!
+    newAd(title: String!, description: String!, price: Int!, imageUrl: String, category: String!, owner_id: Long!) : Ad!
     deleteAd(id: ID!) : Boolean
     updateAdPrice(price: Long!, id: ID!) : Ad!
 }

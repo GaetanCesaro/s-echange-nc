@@ -3,6 +3,8 @@ mutation {
     title: "Table et chaises",
     description: "Magnifique table et chaises d'intérieur",
     price: 25000,
+    imageUrl: "plombier.jpg",
+    category: "plomberie",
     owner_id: 1
   ){
         id title

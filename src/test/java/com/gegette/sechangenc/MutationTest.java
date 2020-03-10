@@ -41,7 +41,7 @@ public class MutationTest {
         GraphQLResponse response = graphQLTestTemplate.perform("graphql/newAd.graphql", null);
         assertNotNull(response);
         assertTrue(response.isOk());
-        assertEquals("4", response.get("$.data.newAd.id"));
+        assertEquals("9", response.get("$.data.newAd.id"));
         assertEquals("Table et chaises", response.get("$.data.newAd.title"));
 
     }

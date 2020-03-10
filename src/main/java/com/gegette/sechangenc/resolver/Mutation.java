@@ -34,12 +34,14 @@ public class Mutation implements GraphQLMutationResolver {
         return user;
     }
 
-    public Ad newAd(String title, String description, Integer price, Long ownerId) {
+    public Ad newAd(String title, String description, Integer price, String imageUrl, String category, Long ownerId) {
         Ad ad = new Ad();
         ad.setOwner(new User(ownerId));
         ad.setTitle(title);
         ad.setDescription(description);
         ad.setPrice(price != null ? price : 0);
+        ad.setImageUrl(imageUrl);
+        ad.setCategory(category);
 
         adRepository.save(ad);
 

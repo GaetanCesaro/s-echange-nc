@@ -29,6 +29,13 @@ public class Ad {
     @Column(nullable = false, name = "PRICE")
     private int price;
 
+    @Column(nullable = false, name = "IMAGE_URL")
+    private String imageUrl;
+
+    @NonNull
+    @Column(nullable = false, name = "CATEGORY")
+    private String category;
+
     @ManyToOne
     @JoinColumn(name = "owner_id", nullable = false, updatable = false)
     private User owner;

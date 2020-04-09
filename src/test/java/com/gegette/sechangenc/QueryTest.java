@@ -31,7 +31,7 @@ public class QueryTest {
         assertNotNull(response);
         assertTrue(response.isOk());
 		assertEquals("1", response.get("$.data.findAllAds[0].id"));
-        assertEquals("Lit bébé", response.get("$.data.findAllAds[0].title"));
+        assertEquals("Bricolage mobilier intérieur", response.get("$.data.findAllAds[0].title"));
 
     }
 
@@ -42,8 +42,8 @@ public class QueryTest {
         assertNotNull(response);
         assertTrue(response.isOk());
         assertEquals(3, response.get("$.data.findAllUsers", ArrayList.class).size());
-        assertEquals("Bill", response.get("$.data.findAllUsers[0].firstName"));
-        assertEquals("Gates", response.get("$.data.findAllUsers[0].lastName"));
+        assertEquals("Mario", response.get("$.data.findAllUsers[0].firstName"));
+        assertEquals("Bros", response.get("$.data.findAllUsers[0].lastName"));
 
     }
 

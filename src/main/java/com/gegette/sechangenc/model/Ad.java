@@ -1,6 +1,5 @@
 package com.gegette.sechangenc.model;
 
-import io.micrometer.core.lang.NonNull;
 import lombok.*;
 
 import javax.persistence.*;
@@ -17,22 +16,18 @@ public class Ad {
     @Column(name = "ID", insertable = false, updatable = false)
     private Long id;
 
-    @NonNull
     @Column(nullable = false, name = "TITLE")
     private String title;
 
-    @NonNull
     @Column(nullable = false, name = "DESCRIPTION")
     private String description;
 
-    @NonNull
     @Column(nullable = false, name = "PRICE")
     private int price;
 
     @Column(nullable = false, name = "IMAGE_URL")
     private String imageUrl;
 
-    @NonNull
     @Column(nullable = false, name = "CATEGORY")
     private String category;
 

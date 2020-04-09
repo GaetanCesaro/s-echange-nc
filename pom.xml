@@ -64,24 +64,10 @@
 			<artifactId>graphql-spring-boot-starter</artifactId>
 			<version>${com.graphql-java-kickstart.version}</version>
 		</dependency>
-        <!-- to embed Altair tool -->
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>altair-spring-boot-starter</artifactId>
-            <version>${com.graphql-java-kickstart.version}</version>
-            <scope>runtime</scope>
-        </dependency>
         <!-- to embed GraphiQL tool -->
         <dependency>
             <groupId>com.graphql-java-kickstart</groupId>
             <artifactId>graphiql-spring-boot-starter</artifactId>
-            <version>${com.graphql-java-kickstart.version}</version>
-            <scope>runtime</scope>
-        </dependency>
-        <!-- to embed Voyager tool -->
-        <dependency>
-            <groupId>com.graphql-java-kickstart</groupId>
-            <artifactId>voyager-spring-boot-starter</artifactId>
             <version>${com.graphql-java-kickstart.version}</version>
             <scope>runtime</scope>
         </dependency>
@@ -92,6 +78,7 @@
             <version>${com.graphql-java-kickstart.version}</version>
             <scope>test</scope>
         </dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

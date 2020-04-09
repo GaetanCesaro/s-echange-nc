@@ -10,6 +10,7 @@ type Ad {
 
 extend type Query {
     findAllAds: [Ad]!
+    getAd(id: ID!) : Ad!
     countAds: Long!
 }
 

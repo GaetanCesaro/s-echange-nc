@@ -25,6 +25,14 @@ public class Query implements GraphQLQueryResolver {
         this.adRepository = adRepository;
     }
 
+    public Ad getAd(Long id) {
+        Optional<Ad> optionalAd = adRepository.findById(id);
+        if (optionalAd.isPresent()) {
+            return optionalAd.get();
+        }
+        throw new EntityNotFoundException("Annonce introuvable", id);
+    }
+
     public Iterable<Ad> findAllAds() {
         return adRepository.findAll();
     }

@@ -19,21 +19,10 @@ import static org.junit.Assert.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @ActiveProfiles(value="devh2")
-public class QueryTest {
+public class UserQueryTest {
 
     @Autowired
     private GraphQLTestTemplate graphQLTestTemplate;
-
-    @Test
-    public void findAllAds() throws IOException {
-
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/findAllAds.graphql", null);
-        assertNotNull(response);
-        assertTrue(response.isOk());
-		assertEquals("1", response.get("$.data.findAllAds[0].id"));
-        assertEquals("Bricolage mobilier intérieur", response.get("$.data.findAllAds[0].title"));
-
-    }
 
     @Test
     public void findAllUsers() throws IOException {

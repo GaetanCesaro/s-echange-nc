@@ -18,22 +18,10 @@ import static org.junit.Assert.*;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 @ActiveProfiles(value="devh2")
-public class MutationTest {
+public class AdMutationTest {
 
     @Autowired
     private GraphQLTestTemplate graphQLTestTemplate;
-
-    @Test
-    public void newUser() throws IOException {
-
-        GraphQLResponse response = graphQLTestTemplate.perform("graphql/newUser.graphql", null);
-        assertNotNull(response);
-        assertTrue(response.isOk());
-        assertEquals("Jean", response.get("$.data.newUser.firstName"));
-        assertEquals("Tanrien", response.get("$.data.newUser.lastName"));
-        assertEquals("jean.tanrien@gmail.com", response.get("$.data.newUser.email"));
-
-    }
 
     @Test
     public void newAd() throws IOException {

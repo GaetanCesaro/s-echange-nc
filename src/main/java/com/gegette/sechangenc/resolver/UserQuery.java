@@ -14,27 +14,21 @@ import java.util.List;
 import java.util.Optional;
 
 @Component
-public class Query implements GraphQLQueryResolver {
+public class UserQuery implements GraphQLQueryResolver {
 
-    private AdRepository adRepository;
     private UserRepository userRepository;
 
     @Autowired
-    public Query(UserRepository userRepository, AdRepository adRepository) {
+    public UserQuery(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.adRepository = adRepository;
     }
 
-    public Ad getAd(Long id) {
-        Optional<Ad> optionalAd = adRepository.findById(id);
-        if (optionalAd.isPresent()) {
-            return optionalAd.get();
+    public User getUser(Long id) {
+        Optional<User> optionalUser = userRepository.findById(id);
+        if (optionalUser.isPresent()) {
+            return optionalUser.get();
         }
-        throw new EntityNotFoundException("Annonce introuvable", id);
-    }
-
-    public Iterable<Ad> findAllAds() {
-        return adRepository.findAll();
+        throw new EntityNotFoundException("Utilisateur introuvable", id);
     }
 
     public Iterable<User> findAllUsers() {
@@ -72,9 +66,6 @@ public class Query implements GraphQLQueryResolver {
         throw new EntityNotFoundException("Utilisateur introuvable", 0L);
     }
 
-    public long countAds() {
-        return adRepository.count();
-    }
     public long countUsers() {
         return userRepository.count();
     }

@@ -8,6 +8,7 @@ type User {
 type Query {
   findAllUsers: [User]!
   findUser(id: ID, firstName: String, lastName: String): [User]!
+  getUser(id: ID!) : User!
   countUsers: Long!
 }
 
